@@ -52,4 +52,3 @@ $(obj):$(BUILD_DIR)/%.o:%.c
 clean:
 	@echo "    CleanDir $(BUILD_DIR)"
 	$(RM) -rf $(BUILD_DIR)
-
