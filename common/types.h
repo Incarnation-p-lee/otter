@@ -10,13 +10,13 @@ typedef signed int             sint32;
 typedef unsigned int           uint32;
 
 #if defined X86_32 || defined RV32
-    typedef signed long long   sint64;
-    typedef unsigned long long uint64;
+typedef signed long long   sint64;
+typedef unsigned long long uint64;
 #endif
 
 #if defined X86_64 || defined RV64
-    typedef signed long        sint64;
-    typedef unsigned long      uint64;
+typedef signed long        sint64;
+typedef unsigned long      uint64;
 #endif
 
 #if defined RV32
