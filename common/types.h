@@ -32,15 +32,15 @@ typedef uint64 xlen_t;
 #endif
 
 typedef struct validate_result {
-  bool is_supported;
-  char *extension_name;
-  char *description;
+    bool is_supported;
+    char *extension_name;
+    char *description;
 } s_validate_result_t;
 
 typedef struct validate_result_collection {
-  uint32 count;
-  uint32 capacity;
-  s_validate_result_t *results;
+    uint32 count;
+    uint32 capacity;
+    s_validate_result_t *results;
 } s_validate_result_collection_t;
 
 #endif
