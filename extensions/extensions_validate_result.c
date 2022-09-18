@@ -1,56 +1,56 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "../common/defines.h"
 #include "../common/types.h"
 
 s_validate_result_collection_t *create_result_collection(uint32 capacity) {
-    if (capacity == 0) {
-        capacity = EXTENSIONS_MAX_CAPACITY;
-    }
+  if (capacity == 0) {
+    capacity = EXTENSIONS_MAX_CAPACITY;
+  }
 
-    s_validate_result_collection_t *collection = malloc(sizeof(*collection));
+  s_validate_result_collection_t *collection = malloc(sizeof(*collection));
 
-    collection->capacity = capacity;
-    collection->count = 0;
-    collection->results = malloc(sizeof(*collection->results) * capacity);
+  collection->capacity = capacity;
+  collection->count = 0;
+  collection->results = malloc(sizeof(*collection->results) * capacity);
 
-    return collection;
+  return collection;
 }
 
 void dispose_result_collection(s_validate_result_collection_t **collection) {
-    if (collection == NULL || *collection == NULL) {
-        return;
-    }
+  if (collection == NULL || *collection == NULL) {
+    return;
+  }
 
-    free((*collection)->results);
-    free(*collection);
+  free((*collection)->results);
+  free(*collection);
 
-    *collection = NULL;
+  *collection = NULL;
 }
 
 void append_one_result(s_validate_result_collection_t *collection,
                        s_validate_result_t result) {
-    if (collection->count >= collection->capacity) {
-        return;
-    }
+  if (collection->count >= collection->capacity) {
+    return;
+  }
 
-    collection->results[collection->count++] = result;
+  collection->results[collection->count++] = result;
 }
 
 void print_result_collection(s_validate_result_collection_t *collection) {
-    if (collection == NULL) {
-        return;
-    }
+  if (collection == NULL) {
+    return;
+  }
 
-    printf("+-----------+----------------+--------------------------------+\n");
-    printf("| Extension | Support Status | Description                    |\n");
-    printf("+-----------+----------------+--------------------------------+\n");
+  printf("+-----------+----------------+--------------------------------+\n");
+  printf("| Extension | Support Status | Description                    |\n");
+  printf("+-----------+----------------+--------------------------------+\n");
 
-    for (uint32 i = 0; i < collection->count; i++) {
-        s_validate_result_t result = collection->results[i];
-        printf("| %-9s | %-14s | %-30s |\n", result.extension_name,
-               TO_BOOL_STRING(result.is_supported), result.description);
-        printf("+-----------+----------------+--------------------------------+\n");
-    }
+  for (uint32 i = 0; i < collection->count; i++) {
+    s_validate_result_t result = collection->results[i];
+    printf("| %-9s | %-14s | %-30s |\n", result.extension_name,
+           TO_BOOL_STRING(result.is_supported), result.description);
+    printf("+-----------+----------------+--------------------------------+\n");
+  }
 }
