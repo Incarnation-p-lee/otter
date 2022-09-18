@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "../common/defines.h"
 #include "../common/types.h"
@@ -50,7 +50,7 @@ void print_result_collection(s_validate_result_collection_t *collection) {
   for (uint32 i = 0; i < collection->count; i++) {
     s_validate_result_t result = collection->results[i];
     printf("| %-9s | %-14s | %-30s |\n", result.extension_name,
-      TO_BOOL_STRING(result.is_supported), result.description);
+           TO_BOOL_STRING(result.is_supported), result.description);
     printf("+-----------+----------------+--------------------------------+\n");
   }
 }
