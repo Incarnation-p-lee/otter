@@ -7,9 +7,9 @@
 static inline s_validate_result_t validate_I_extension() {
   uint64 val;
   s_validate_result_t result = {
-    true,
-    "I",
-    "Extension I is Supported",
+      true,
+      "I",
+      "Extension I is Supported",
   };
 
   asm volatile("lui        t0, 0xff\n\t"
@@ -32,9 +32,9 @@ static inline s_validate_result_t validate_I_extension() {
 static inline s_validate_result_t validate_M_extension() {
   uint64 val;
   s_validate_result_t result = {
-    true,
-    "M",
-    "Extension M is Supported",
+      true,
+      "M",
+      "Extension M is Supported",
   };
 
   asm volatile("lui        t0, 0xff\n\t"
