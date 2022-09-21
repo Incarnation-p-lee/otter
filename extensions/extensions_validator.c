@@ -144,7 +144,7 @@ static inline s_validate_result_t validate_C_extension() {
                "fence"
                : [dest] "=m"(val)
                :
-               :"a0", "a1", "a2", "a3");
+               : "a0", "a1", "a2", "a3");
 
   return result;
 }
