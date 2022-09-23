@@ -155,13 +155,13 @@ static NO_INLINE uint64 level_2_loop_int_vectorization() {
   return result;
 }
 
-static NO_INLINE uint64
-loop_with_unknown_trip_count(double *a, double *b, double c,
-                             int start, int end) {
+static NO_INLINE uint64 loop_with_unknown_trip_count(double *a, double *b,
+                                                     double c, int start,
+                                                     int end) {
   FENCE();
 
   for (int i = start; i <= end; i++) {
-      a[i] = a[i] * b[i] + c;
+    a[i] = a[i] * b[i] + c;
   }
 
   FENCE();
