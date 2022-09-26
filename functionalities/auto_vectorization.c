@@ -322,9 +322,9 @@ static NO_INLINE uint64 single_loop_with_partial_unrolling(int loop_size) {
   return result;
 }
 
-static NO_INLINE void single_loop_with_slp_vectorization(int *result,
-                                                         int a1, int a2,
-                                                         int b1, int b2) {
+static NO_INLINE void single_loop_with_slp_vectorization(int *result, int a1,
+                                                         int a2, int b1,
+                                                         int b2) {
   int value = (a2 + b2) * (a1 + b1);
   FENCE();
 
