@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include "../common/defines.h"
 #include "../common/types.h"
