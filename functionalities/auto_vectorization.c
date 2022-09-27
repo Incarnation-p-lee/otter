@@ -312,14 +312,10 @@ static inline void show_gemm_auto_vectorization() {
   destory_matrix(b, m);
 }
 
-static NO_INLINE void show_simple_int_convolution_auto_vectorization(uint64 **a,
-                                                                     int am,
-                                                                     int an,
-                                                                     uint64 **k,
-                                                                     int km,
-                                                                     int kn,
-                                                                     uint64 **f,
-                                                                     int bias) {
+static NO_INLINE void
+show_simple_int_convolution_auto_vectorization(uint64 **a, int am, int an,
+                                               uint64 **k, int km, int kn,
+                                               uint64 **f, int bias) {
   for (int i = 0; i < am - km + 1; i++) {
     for (int j = 0; j < an - kn + 1; j++) {
       f[i][j] = bias;
