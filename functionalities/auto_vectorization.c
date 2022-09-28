@@ -281,7 +281,7 @@ static NO_INLINE void show_simple_int_gemm_auto_vectorization(uint64 **a,
 }
 
 static NO_INLINE uint64 **transform_matrix(uint64 **matrix, int k, int n) {
-  uint64 **transform= create_matrix(n, k);
+  uint64 **transform = create_matrix(n, k);
 
   for (int i = 0; i < k; i++) {
     for (int j = 0; j < n; j++) {
@@ -292,10 +292,8 @@ static NO_INLINE uint64 **transform_matrix(uint64 **matrix, int k, int n) {
   return transform;
 }
 
-static NO_INLINE void show_simple_int_gemm_transformed_auto_vectorization(uint64 **a,
-                                                              uint64 **b,
-                                                              uint64 **c, int m,
-                                                              int k, int n) {
+static NO_INLINE void show_simple_int_gemm_transformed_auto_vectorization(
+    uint64 **a, uint64 **b, uint64 **c, int m, int k, int n) {
   uint64 **transform = transform_matrix(b, k, n);
 
   FENCE();
