@@ -216,7 +216,7 @@ static inline void show_integer_auto_vectorization() {
   single_loop_with_slp_vectorization((int *)a, 1, 2, 4, 8);
 
   show_integer_average_auto_vectorization((uint8 *)a, 2, (uint8 *)b, 4,
-                                          (uint8 *)c, 8, 1024, 4096);
+                                          (uint8 *)c, 8, loop_size, loop_size);
 
   free(a);
   free(b);
