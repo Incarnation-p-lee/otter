@@ -183,6 +183,22 @@ static NO_INLINE void single_loop_with_slp_vectorization(int *result, int a1,
   FENCE();
 }
 
+static NO_INLINE void
+show_integer_average_auto_vectorization(uint8 *dst, uint32 dst_stride,
+                                        uint8 *src_1, uint32 src_1_stride,
+                                        uint8 *src_2, uint32 src_2_stride,
+                                        uint32 width, uint32 height) {
+  for (uint32 y = 0; y < height; y++) {
+    for (uint32 x = 0; x < width; x++) {
+      dst[x] = (src_1[x] + src_2[x] + 1) >> 1;
+    }
+
+    dst += dst_stride;
+    src_1 += src_1_stride;
+    src_2 += src_2_stride;
+  }
+}
+
 static inline void show_integer_auto_vectorization() {
   int loop_size = 4096;
 
@@ -200,6 +216,9 @@ static inline void show_integer_auto_vectorization() {
   single_loop_with_scatter_and_gather(a, b, loop_size);
   single_loop_with_mixed_types((char *)a, b, loop_size);
   single_loop_with_slp_vectorization((int *)a, 1, 2, 4, 8);
+
+  show_integer_average_auto_vectorization((uint8 *)a, 2, (uint8 *)b, 4, (uint8 *)c, 8,
+                                          1024, 4096);
 
   free(a);
   free(b);
