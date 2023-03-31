@@ -14,23 +14,25 @@ obj                    :=$(addprefix $(BUILD_DIR)/,$(obj))
 
 all:check $(BUILD_DIR) $(TARGET)
 
-CFLAG                  =-Wall -Wextra -Werror -I/usr/include --target=$(TARGET_TRIPLE) \
+CLANG_CFLAG            =-Wall -Wextra -Werror -I/usr/include --target=$(TARGET_TRIPLE) \
                             -DRV64 -march=rv64gcv1p0_zbb -mllvm -riscv-v-vector-bits-min=512 \
                             -menable-experimental-extensions -O3 -c
+GCC_CFLAG              =-Wall -Wextra -Werror -I/usr/include -O3 -c \
+                            -DRV64 -march=rv64gcv_zbb_zifencei
 LFLAG                  :=-O3 -static
 LIB                    :=-lm
 
 check:
 ifndef CLANG
-	@echo "Environment variable CLANG must be set"
+	@echo "Environment variable CLANG no set, will take GCC"
+else
+  ifndef TARGET_TRIPLE
+	@echo "Environment variable TARGET_TRIPLE must be set for clang"
 	exit 1
+  endif
 endif
 ifndef GCC
 	@echo "Environment variable GCC must be set"
-	exit 1
-endif
-ifndef TARGET_TRIPLE
-	@echo "Environment variable TARGET_TRIPLE must be set"
 	exit 1
 endif
 
@@ -48,7 +50,11 @@ $(obj):$(BUILD_DIR)/%.o:%.c
 	@echo "    MakeDir  $(dir $@)"
 	$(MKDIR) -p $(dir $@)
 	@echo "    Compile  $<"
-	$(_CLANG) $(CFLAG) $< -o $@
+ifdef CLANG
+	$(_CLANG) $(CLANG_CFLAG) $< -o $@
+else
+	$(_GCC) $(GCC_CFLAG) $< -o $@
+endif
 
 clean:
 	@echo "    CleanDir $(BUILD_DIR)"

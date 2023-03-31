@@ -140,9 +140,9 @@ static inline s_validate_result_t validate_C_extension() {
                "c.add      a2, a0\n\t"
                "c.sub      a3, a2\n\t"
                "c.slli     a3, 0x3\n\t"
-               "c.sd       a3, %[dest]\n\t"
+               "c.sd       a3, (%[dest])\n\t"
                "fence"
-               : [dest] "=m"(val)
+               : [dest] "=r"(val)
                :
                : "a0", "a1", "a2", "a3");
 
