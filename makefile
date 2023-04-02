@@ -16,8 +16,8 @@ all:check $(BUILD_DIR) $(TARGET)
 
 CLANG_CFLAG            =-Wall -Wextra -Werror -I/usr/include --target=$(TARGET_TRIPLE) \
                             -DRV64 -march=rv64gcv1p0_zbb -mllvm -riscv-v-vector-bits-min=512 \
-                            -menable-experimental-extensions -O3 -c
-GCC_CFLAG              =-Wall -Wextra -Werror -I/usr/include -O3 -c \
+                            -menable-experimental-extensions -O2 -c
+GCC_CFLAG              =-Wall -Wextra -Werror -I/usr/include -O2 -c \
                             -DRV64 -march=rv64gcv_zbb_zifencei
 LFLAG                  :=-O3 -static
 LIB                    :=-lm
