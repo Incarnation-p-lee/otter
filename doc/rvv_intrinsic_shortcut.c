@@ -489,3 +489,96 @@ vint32m1_t shortcut_for_riscv_vmerge_case_0(vint32m1_t v1, vbool32_t mask,
 vint32m1_t shortcut_for_riscv_vmv_case_0(size_t vl) {
   return __riscv_vmv_v_x_i32m1(0, vl);
 }
+
+/* vsaddu */
+vuint32m1_t shortcut_for_riscv_vsaddu_case_0(vuint32m1_t v1, size_t vl) {
+  return __riscv_vsaddu_vx_u32m1(v1, 0, vl);
+}
+
+/* vsadd */
+vint32m1_t shortcut_for_riscv_vsadd_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vsadd_vx_i32m1(v1, 0, vl);
+}
+
+/* vssubu */
+vuint32m1_t shortcut_for_riscv_vssubu_case_0(vuint32m1_t v1, size_t vl) {
+  return __riscv_vssubu_vx_u32m1(v1, 0, vl);
+}
+
+vuint32m1_t shortcut_for_riscv_vssubu_case_1(vuint32m1_t v1, size_t vl) {
+  return __riscv_vssubu_vv_u32m1(v1, v1, vl);
+}
+
+/* vssub */
+vint32m1_t shortcut_for_riscv_vssub_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vssub_vx_i32m1(v1, 0, vl);
+}
+
+vint32m1_t shortcut_for_riscv_vssub_case_1(vint32m1_t v1, size_t vl) {
+  return __riscv_vssub_vv_i32m1(v1, v1, vl);
+}
+
+/* vaaddu */
+vuint32m1_t shortcut_for_riscv_vaaddu_case_0(vuint32m1_t v1, size_t vl) {
+  return __riscv_vaaddu_vx_u32m1(v1, 0, vl);
+}
+
+vuint32m1_t shortcut_for_riscv_vaaddu_case_1(vuint32m1_t v1, size_t vl) {
+  return __riscv_vaaddu_vv_u32m1(v1, v1, vl);
+}
+
+/* vaadd */
+vint32m1_t shortcut_for_riscv_vaadd_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vaadd_vx_i32m1(v1, 0, vl);
+}
+
+vint32m1_t shortcut_for_riscv_vaadd_case_1(vint32m1_t v1, size_t vl) {
+  return __riscv_vaadd_vv_i32m1(v1, v1, vl);
+}
+
+/* vasubu */
+vuint32m1_t shortcut_for_riscv_vasubu_case_0(vuint32m1_t v1, size_t vl) {
+  return __riscv_vasubu_vx_u32m1(v1, 0, vl);
+}
+
+vuint32m1_t shortcut_for_riscv_vasubu_case_1(vuint32m1_t v1, size_t vl) {
+  return __riscv_vasubu_vv_u32m1(v1, v1, vl);
+}
+
+/* vasub */
+vint32m1_t shortcut_for_riscv_vasub_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vasub_vx_i32m1(v1, 0, vl);
+}
+
+vint32m1_t shortcut_for_riscv_vasub_case_1(vint32m1_t v1, size_t vl) {
+  return __riscv_vasub_vv_i32m1(v1, v1, vl);
+}
+
+/* vsmul */
+vint32m1_t shortcut_for_riscv_vsmul_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vsmul_vx_i32m1(v1, 0, vl);
+}
+
+/* vssrl */
+vuint32m1_t shortcut_for_riscv_vssrl_case_0(vuint32m1_t v1, size_t vl) {
+  return __riscv_vssrl_vv_u32m1(v1, v1, vl);
+}
+
+vuint32m1_t shortcut_for_riscv_vssrl_case_1(vuint32m1_t v1, size_t vl) {
+  return __riscv_vssrl_vx_u32m1(v1, 0, vl);
+}
+
+/* vssra */
+vint32m1_t shortcut_for_riscv_vssra_case_1(vint32m1_t v1, size_t vl) {
+  return __riscv_vssra_vx_i32m1(v1, 0, vl);
+}
+
+/* vnclipu */
+vuint32m1_t shortcut_for_riscv_vnclipu_case_0(vuint64m2_t v1, size_t vl) {
+  return __riscv_vnclipu_wx_u32m1(v1, 0, vl);
+}
+
+/* vnclip */
+vint32m1_t shortcut_for_riscv_vnclip_case_0(vint64m2_t v1, size_t vl) {
+  return __riscv_vnclip_wx_i32m1(v1, 0, vl);
+}
