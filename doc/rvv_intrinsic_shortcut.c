@@ -876,3 +876,63 @@ vfloat32m1_t shortcut_for_riscv_vfmv_case_0(size_t vl) {
 vfloat32m1_t shortcut_for_riscv_vfmv_case_1(size_t vl) {
   return __riscv_vfmv_v_f_f32m1(-0.0, vl);
 }
+
+/* vmand */
+vbool32_t shortcut_for_riscv_vmand_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmand_mm_b32(v1, v1, vl);
+}
+
+/* vmnand */
+vbool32_t shortcut_for_riscv_vmnand_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmnand_mm_b32(v1, v1, vl);
+}
+
+/* vmandn */
+vbool32_t shortcut_for_riscv_vmandn_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmandn_mm_b32(v1, v1, vl);
+}
+
+/* vmxor */
+vbool32_t shortcut_for_riscv_vmxor_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmxor_mm_b32(v1, v1, vl);
+}
+
+/* vmor */
+vbool32_t shortcut_for_riscv_vmor_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmor_mm_b32(v1, v1, vl);
+}
+
+/* vmnor */
+vbool32_t shortcut_for_riscv_vmnor_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmnor_mm_b32(v1, v1, vl);
+}
+
+/* vmorn */
+vbool32_t shortcut_for_riscv_vmorn_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmorn_mm_b32(v1, v1, vl);
+}
+
+/* vmxnor */
+vbool32_t shortcut_for_riscv_vmxnor_case_0(vbool32_t v1, size_t vl) {
+  return __riscv_vmxnor_mm_b32(v1, v1, vl);
+}
+
+/* vmv(permuatation) */
+vint32m1_t shortcut_for_riscv_vmv_case_1(size_t vl) {
+  return __riscv_vmv_s_x_i32m1(0, vl);
+}
+
+/* vslideup */
+vint32m1_t shortcut_for_riscv_vslideup_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vslideup_vx_i32m1(v1, v1, 0, vl);
+}
+
+/* vslidedown */
+vint32m1_t shortcut_for_riscv_vslidedown_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vslidedown_vx_i32m1(v1, 0, vl);
+}
+
+/* vrgather */
+vint32m1_t shortcut_for_riscv_vrgather_case_0(vint32m1_t v1, size_t vl) {
+  return __riscv_vrgather_vx_i32m1(v1, 0, vl);
+}
