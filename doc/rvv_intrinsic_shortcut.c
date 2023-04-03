@@ -1,5 +1,5 @@
-#include <math.h>
 #include "riscv_vector.h"
+#include <math.h>
 
 // riscv64-unknown-elf-gcc -march=rv64gcv -mabi=lp64d
 // doc/rvv_intrinsic_shortcut.c -c -S -O2 -o -
@@ -762,38 +762,46 @@ vfloat32m1_t shortcut_for_riscv_vfnmsub_case_1(vfloat32m1_t v1, size_t vl) {
 }
 
 /* vfwmacc */
-vfloat64m2_t shortcut_for_riscv_vfwmacc_case_0(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwmacc_case_0(vfloat64m2_t v1, vfloat32m1_t v2,
+                                               size_t vl) {
   return __riscv_vfwmacc_vf_f64m2(v1, 0.0, v2, vl);
 }
 
-vfloat64m2_t shortcut_for_riscv_vfwmacc_case_1(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwmacc_case_1(vfloat64m2_t v1, vfloat32m1_t v2,
+                                               size_t vl) {
   return __riscv_vfwmacc_vf_f64m2(v1, -0.0, v2, vl);
 }
 
 /* vfwnmacc */
-vfloat64m2_t shortcut_for_riscv_vfwnmacc_case_0(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwnmacc_case_0(vfloat64m2_t v1,
+                                                vfloat32m1_t v2, size_t vl) {
   return __riscv_vfwnmacc_vf_f64m2(v1, 0.0, v2, vl);
 }
 
-vfloat64m2_t shortcut_for_riscv_vfwnmacc_case_1(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwnmacc_case_1(vfloat64m2_t v1,
+                                                vfloat32m1_t v2, size_t vl) {
   return __riscv_vfwnmacc_vf_f64m2(v1, -0.0, v2, vl);
 }
 
 /* vfwmsac */
-vfloat64m2_t shortcut_for_riscv_vfwmsac_case_0(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwmsac_case_0(vfloat64m2_t v1, vfloat32m1_t v2,
+                                               size_t vl) {
   return __riscv_vfwmsac_vf_f64m2(v1, 0.0, v2, vl);
 }
 
-vfloat64m2_t shortcut_for_riscv_vfwmsac_case_1(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwmsac_case_1(vfloat64m2_t v1, vfloat32m1_t v2,
+                                               size_t vl) {
   return __riscv_vfwmsac_vf_f64m2(v1, -0.0, v2, vl);
 }
 
 /* vfwnmsac */
-vfloat64m2_t shortcut_for_riscv_vfwnmsac_case_0(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwnmsac_case_0(vfloat64m2_t v1,
+                                                vfloat32m1_t v2, size_t vl) {
   return __riscv_vfwnmsac_vf_f64m2(v1, 0.0, v2, vl);
 }
 
-vfloat64m2_t shortcut_for_riscv_vfwnmsac_case_1(vfloat64m2_t v1, vfloat32m1_t v2, size_t vl) {
+vfloat64m2_t shortcut_for_riscv_vfwnmsac_case_1(vfloat64m2_t v1,
+                                                vfloat32m1_t v2, size_t vl) {
   return __riscv_vfwnmsac_vf_f64m2(v1, -0.0, v2, vl);
 }
 
