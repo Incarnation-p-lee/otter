@@ -294,7 +294,7 @@ vuint32m1_t shortcut_for_riscv_vmaxu_case_1(vuint32m1_t v1, size_t vl) {
 ```assembly
 vl1re32.v v24, 0(a1)
 vsetvli   zero, a2, e32, m1, ta, ma
-vmaxu.vx  v24, v24, zero           # <== eliminate
+vmaxu.vx  v24, v24, zero           # <== vmv.vv v24, v24
 vs1r.v    v24, 0(a0)
 ret
 ```
@@ -304,6 +304,8 @@ ret
 * [Placeholder]().
 
 #### Conclusion
+
+It looks like there is no obvious benefits when for this optimization. `vmaxu v24, v24, zero` => `vmv.vv v24, v24` doesn't save any resources like vector register. However, we can add some test cases here.
 
 ### `VMULH`
 
