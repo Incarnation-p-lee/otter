@@ -411,6 +411,8 @@ ret
 
 #### Conclusion
 
+* [x] Cannot perform this optimization due to there may be 0 in v24.
+
 ### `VDIV`
 
 #### Sample Code
@@ -436,6 +438,8 @@ ret
 * [Placeholder]().
 
 #### Conclusion
+
+* [x] Cannot perform this optimization due to there may be 0 in v24.
 
 ### `VREMU`
 
@@ -463,6 +467,8 @@ ret
 
 #### Conclusion
 
+* [x] Cannot perform this optimization due to there may be 0 in v24.
+
 ### `VREM`
 
 #### Sample Code
@@ -488,6 +494,8 @@ ret
 * [Placeholder]().
 
 #### Conclusion
+
+* [x] Cannot perform this optimization due to there may be 0 in v24.
 
 ### `VMERGE`
 
