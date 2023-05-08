@@ -2,7 +2,7 @@
 
 ## Integer Arithmetic
 
-### `VSLL`
+### [N] `VSLL`
 
 #### Sample Code
 
@@ -30,7 +30,7 @@ ret
 
 * [x] Kind of corner case and we will defer this optimization after synced with the community,  `VSRL` likewise.
 
-### `VMSEQ`
+### [Y] `VMSEQ`
 
 #### Sample Code
 
@@ -57,7 +57,9 @@ ret
 
 #### Conclusion
 
-### `VMSNE`
+* [x] Completed the Patch.
+
+### [Y] `VMSNE`
 
 #### Sample Code
 
@@ -84,7 +86,9 @@ ret
 
 #### Conclusion
 
-### `VMSLTU`
+* [x] Completed the Patch.
+
+### [Y] `VMSLTU`
 
 #### Sample Code
 
@@ -122,7 +126,9 @@ ret
 
 #### Conclusion
 
-### `VMSLT`
+* [x] Completed the Patch for VMSLTU(v, v)
+
+### [Y] `VMSLT`
 
 #### Sample Code
 
@@ -149,7 +155,9 @@ ret
 
 #### Conclusion
 
-### `VMSLEU`
+* [x] Completed the Patch.
+
+### [Y] `VMSLEU`
 
 #### Sample Code
 
@@ -187,7 +195,9 @@ ret
 
 #### Conclusion
 
-### `VMSLE`
+* [x] Completed the Patch for VMSLEU(v, v).
+
+### [Y] `VMSLE`
 
 #### Sample Code
 
@@ -213,6 +223,8 @@ ret
 * [Placeholder]().
 
 #### Conclusion
+
+* [x] Completed the Patch.
 
 ### `VMSGTU`
 
@@ -252,7 +264,9 @@ ret
 
 #### Conclusion
 
-### `VMSGT`
+* [x] Completed the Patch for VMSGTU(v, v)
+
+### [Y] `VMSGT`
 
 #### Sample Code
 
@@ -279,7 +293,9 @@ ret
 
 #### Conclusion
 
-### `VMAXU`
+* [x] Completed the Patch.
+
+### [N] `VMAXU`
 
 #### Sample Code
 
@@ -307,7 +323,7 @@ ret
 
 It looks like there is no obvious benefits when for this optimization. `vmaxu v24, v24, zero` => `vmv.vv v24, v24` doesn't save any resources like vector register. However, we can add some test cases here.
 
-### `VMULH`
+### [?] `VMULH`
 
 #### Sample Code
 
@@ -333,7 +349,7 @@ ret
 
 #### Conclusion
 
-### `VMULHU`
+### [?] `VMULHU`
 
 #### Sample Code
 
@@ -359,7 +375,7 @@ ret
 
 #### Conclusion
 
-### `VMULHSU`
+### [?] `VMULHSU`
 
 #### Sample Code
 
@@ -385,7 +401,7 @@ ret
 
 #### Conclusion
 
-### `VDIVU`
+### [N] `VDIVU`
 
 #### Sample Code
 
@@ -413,7 +429,7 @@ ret
 
 * [x] Cannot perform this optimization due to there may be 0 in v24.
 
-### `VDIV`
+### [N] `VDIV`
 
 #### Sample Code
 
@@ -441,7 +457,7 @@ ret
 
 * [x] Cannot perform this optimization due to there may be 0 in v24.
 
-### `VREMU`
+### [N] `VREMU`
 
 #### Sample Code
 
@@ -469,7 +485,7 @@ ret
 
 * [x] Cannot perform this optimization due to there may be 0 in v24.
 
-### `VREM`
+### [N] `VREM`
 
 #### Sample Code
 
@@ -497,7 +513,7 @@ ret
 
 * [x] Cannot perform this optimization due to there may be 0 in v24.
 
-### `VMERGE`
+### [?] `VMERGE`
 
 #### Sample Code
 
@@ -525,7 +541,7 @@ ret
 
 #### Conclusion
 
-### `VSSUBU`
+### [?] `VSSUBU`
 
 #### Sample Code
 
@@ -551,7 +567,7 @@ ret
 
 #### Conclusion
 
-### `VSSUB`
+### [?] `VSSUB`
 
 #### Sample Code
 
@@ -577,27 +593,7 @@ ret
 
 #### Conclusion
 
-### `Placeholder`
-
-#### Sample Code
-
-```c
-
-```
-
-#### Current Code Generation and Possible Optimization
-
-```assembly
-
-```
-
-#### Patch
-
-* [Placeholder]().
-
-#### Conclusion
-
-### `VAADDU`
+### [?] `VAADDU`
 
 #### Sample Code
 
@@ -623,7 +619,7 @@ ret
 
 #### Conclusion
 
-### `VAADD`
+### [?] `VAADD`
 
 #### Sample Code
 
@@ -649,7 +645,7 @@ ret
 
 #### Conclusion
 
-### `VASUBU`
+### [?] `VASUBU`
 
 #### Sample Code
 
@@ -675,7 +671,7 @@ ret
 
 #### Conclusion
 
-### `VASUB`
+### [?] `VASUB`
 
 #### Sample Code
 
@@ -701,7 +697,7 @@ ret
 
 #### Conclusion
 
-### `VSMUL`
+### [?] `VSMUL`
 
 #### Sample Code
 
