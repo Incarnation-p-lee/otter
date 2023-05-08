@@ -1,3 +1,4 @@
+[TOC]
 # GNU RVV Intrinsic API Shortcut
 
 ## Integer Arithmetic
@@ -226,7 +227,7 @@ ret
 
 * [x] Completed the Patch.
 
-### `VMSGTU`
+### [Y] `VMSGTU`
 
 #### Sample Code
 
